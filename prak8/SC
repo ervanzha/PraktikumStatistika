@@ -1,0 +1,28 @@
+col_list=['Price']
+numhouse = data_ervan[data_ervan.columns[data_ervan.columns.isin(col_list)]]
+plt.figure(figsize=(10,5))
+numhouse.boxplot(sym='r*', grid=False)
+plt.show()
+plt.figure(figsize=(15,5))
+plt.subplot(121)
+data_ervan['Price'].plot.hist(bins=10, title='Price')
+plt.show()
+col_list=['Price', 'SqFt']
+numhouse = data_ervan[data_ervan.columns[data_ervan.columns.isin(col_list)]]
+numhouse.plot.scatter(x='SqFt', y='Price')
+col_list=['Price', 'Bedrooms']
+numhouse = data_ervan[data_ervan.columns[data_ervan.columns.isin(col_list)]]
+plt.figure(figsize=(15,5))
+numhouse.boxplot(by='Bedrooms')
+plt.show()
+col_list=['Price', 'Bedrooms']
+numhouse = data_ervan[data_ervan.columns[data_ervan.columns.isin(col_list)]]
+numhouse.plot.scatter(x='Bedrooms', y='Price')
+col_list=['Price', 'Bathrooms']
+numhouse = data_ervan[data_ervan.columns[data_ervan.columns.isin(col_list)]]
+numhouse.plot.scatter(x='Bathrooms', y='Price')
+col_list=['Price', 'Bathrooms']
+numhouse = data_ervan[data_ervan.columns[data_ervan.columns.isin(col_list)]]
+plt.figure(figsize=(15,5))
+numhouse.boxplot(by='Bathrooms')
+plt.show()
