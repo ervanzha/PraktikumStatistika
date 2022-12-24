@@ -1,0 +1,13 @@
+df_ervan = read.delim("clipboard")
+View(df_ervan)
+head(df_ervan)
+model <- aov(korosi~metode, data=df_ervan)
+summary(model)
+tukey.test <- TukeyHSD(model)
+tukey.test
+df_ervan=PlantGrowth
+View(df_ervan)
+model <- aov(weight~group, data=df_ervan)
+summary(model)
+tukey.test <- TukeyHSD(model)
+tukey.test
