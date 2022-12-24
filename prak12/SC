@@ -1,0 +1,12 @@
+df_ervan=read.delim("clipboard")
+head(df_ervan)
+model_reg=lm(df_ervan$y~df_ervan$x)
+summary(model_reg)
+df_ervan=read.delim("clipboard")
+df_ervan$brick_dummy <- ifelse(df_ervan$Brick =="Yes", 1,0)
+df_ervan$N_dummy1 <- ifelse(df_ervan$Neighborhood =="west", 1,0) 
+df_ervan$N_dummy2 <- ifelse(df_ervan$Neighborhood =="North", 1,0)
+model=lm(df_ervan$Price~df_ervan$SqFt+df_ervan$Bedrooms+df_ervan$Bathrooms+df_ervan$brick_dummy+df_ervan$N_dummy1+df_ervan
+summary(model)
+by(df_ervan$Price, df_ervan$Neighborhood, mean)
+by(df_ervan$Price, df_ervan$Brick, mean)
