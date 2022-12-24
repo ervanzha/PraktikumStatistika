@@ -1,0 +1,18 @@
+dataku_ervan = read.delim("clipboard")
+View(dataku_ervan)
+wilcox.test(dataku_ervan$Sebelum, dataku_ervan$Setelah,paired=TRUE)
+dataku_ervan = read.delim("clipboard")
+View(dataku_ervan)
+wilcox.test(dataku_ervan$Sebelum, dataku_ervan$Sesudah,paired=TRUE)
+df_ervan=read.delim("clipboard")
+# independent 2-group Mann-Whitney U Test
+wilcox.test(df_ervan$obat~df_ervan$grup)
+# where y is numeric and A is A binary factor
+head(df_ervan)
+rank(df_ervan$obat)
+dataku_ervan = read.delim("clipboard")
+View(dataku_ervan)
+wilcox.test(dataku_ervan$Ganjil, dataku_ervan$Genap,paired=TRUE)
+dataku_ervan = read.delim("clipboard")
+View(dataku_ervan)
+wilcox.test(dataku_ervan$caffeine,dataku_ervan$placebo ,paired=TRUE)
